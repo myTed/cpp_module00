@@ -1,10 +1,10 @@
 CXX=g++
 
-CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS=megaphone.cpp
+SRCS=Account.cpp tests.cpp
 OBJECTS=$(patsubst %.cpp, %.o, $(SRCS))
-NAME=megaphone
+NAME=Account
 
 all:$(NAME)
 

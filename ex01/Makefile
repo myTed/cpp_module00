@@ -1,10 +1,11 @@
-CXX=c++
+CXX=g++
 
-CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS += -I ./include
 
-SRCS=main.cpp Contact.cpp PhoneBook.cpp
+SRCS=main.cpp Contact.cpp PhoneBook.cpp Console.cpp
 OBJECTS=$(patsubst %.cpp, %.o, $(SRCS))
-NAME=PhoneBook
+NAME=phoneBook
 
 all:$(NAME)
 

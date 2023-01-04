@@ -13,11 +13,11 @@ private:
     std::string _phoneNumber;
     std::string _darkestScret;
 public:
-    void                SetFirstName(std::string &s);
-    void                SetLastName(std::string &s);
-    void                SetNickName(std::string &s);
-    void                SetPhoneNumber(std::string &s);
-    void                SetDarkestScret(std::string &s);
+    void                SetFirstName(const std::string &s);
+    void                SetLastName(const std::string &s);
+    void                SetNickName(const std::string &s);
+    void                SetPhoneNumber(const std::string &s);
+    void                SetDarkestScret(const std::string &s);
     const std::string&  GetFirstName(void) const;
     const std::string&  GetLastName(void) const;
     const std::string&  GetNickName(void) const;

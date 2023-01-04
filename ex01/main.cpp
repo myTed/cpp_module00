@@ -1,33 +1,20 @@
 #include <iostream>
 #include "PhoneBook.hpp"
-
-void ClearInputError(std::istream &is)
-{
-    if (is.eof())
-    {
-        is.clear();
-        std::clearerr(stdin);
-        return ;
-    }
-    is.clear();
-    while (std::cin.get() != '\n');
-    return ;
-}
+#include "Console.hpp"
 
 int main(void)
 {
-    std::string cmd;
-    PhoneBook book;
+    std::string     cmd;
+    PhoneBook       book;
+    Console         console;
+    bool            isEof;
 
     while(1)
     {
-        std::cout << "\n명령을 입력하세요\n" << "ADD\t SEARCH\t EXIT\n" << "CMD : ";
-        std::getline(std::cin, cmd);
-        if (!std::cin.good())
-        {
-            ClearInputError(std::cin);
+        std::cout << "\n명령을 입력하세요\n" << "ex1) ADD\nex2) SEARCH\nex3) EXIT\n"
+                << "CMD : ";
+        if (!console.GetString(&cmd, &isEof))
             continue;
-        }
         if (cmd == "ADD")
             book.Add();
         else if(cmd == "SEARCH")
